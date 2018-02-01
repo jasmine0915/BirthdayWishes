@@ -1,0 +1,17 @@
+<h1>confirming form</h1>
+<%= form_for @wish do |f| %>
+
+    description: <%= @wish.description %>
+    <%= f.hidden_field :description %>
+    <%= @wish.object %>
+    <%= f.hidden_field :object %>
+    <%= @wish.deadline %>
+    <%= f.hidden_field :deadline %>
+    <%= @wish.title %>
+    <%= f.hidden_field :title %>
+    <%= image_tag @wish.image.to_s %>
+    <%= f.hidden_field :image %>
+
+    <%= f.submit 'back', name: 'back' %>
+    <%= f.submit 'enter' %>
+<% end %>
