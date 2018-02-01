@@ -5,14 +5,19 @@ class MessagesController < ApplicationController
   end
   
   def create
-    message = Message.new(@messages)
-    if message.save?
+    wish = Wish.find(params[:wish_id])
+    @message = wish.messages.build(message_params)
+    if @message.save
       render :action => "thankyou"
     else
-      render :action => "new"
+      redirect_to :action => "new"
     end
   end
 
-  def thanks
+  def thankyou
   end
+end
+
+def message_params
+  params.require(:message).permit(:name, :body, :icon)
 end
