@@ -10,6 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180201052008) do
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "wish_id"
+    t.string "name"
+    t.string "body"
+    t.text "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wishes", force: :cascade do |t|
+    t.text "description"
+    t.string "object"
+    t.date "deadline"
+    t.string "title"
+    t.text "image"
+    t.text "message_url"
+    t.text "object_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
