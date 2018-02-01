@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :wish, only: [:new, :create, :show] do
+    collection do
+      post 'comfirmation'
+      get 'complete'
+    end
+    resources :message, only: [:new, :create] do
+      collection do
+        get 'thankyou'
+      end
+    end
+  end
 end
