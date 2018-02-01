@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'top#index'
-  resources :wish, only: [:new, :create, :show] do
+  resources :wishes, only: [:new, :create, :show] do
     collection do
       post 'comfirmation'
       get 'complete'
     end
-    resources :message, only: [:new, :create] do
+    resources :messages, only: [:new, :create] do
       collection do
         get 'thankyou'
       end
