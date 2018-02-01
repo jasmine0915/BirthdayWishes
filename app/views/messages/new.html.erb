@@ -1,7 +1,7 @@
 <h1>Messages#new</h1>
 <%= @wish.description %>
 <%= @wish.deadline %>
-<%= form_for @messages, url: wish_messages_path do |f| %>
+<%= form_for @messages, url: wish_messages_path(@wish.id) do |f| %>
   <%= f.text_field :name %>
   <br>
   <%= f.text_area :body %>
