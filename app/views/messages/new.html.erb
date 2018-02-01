@@ -1,0 +1,12 @@
+<h1>Messages#new</h1>
+<%= @wish.description %>
+<%= @wish.deadline %>
+<%= form_for @messages, url: new_wish_message_path do |f| %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.text_area :body %>
+  <br>
+  <%= f.file_field :icon %>
+  <br>
+  <%= f.submit "Upload" %>
+<% end %>
