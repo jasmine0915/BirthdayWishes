@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @message = Message.new(message_params)
+    wish = Wish.find(params[:wish_id])
+    @message = wish.messages.build(message_params)
     if @message.save
       render :action => "thankyou"
     else
