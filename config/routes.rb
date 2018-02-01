@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'top#index'
   resources :wish, only: [:new, :create, :show] do
     collection do
       post 'comfirmation'
