@@ -1,0 +1,19 @@
+<h1>wishes form</h1>
+
+<%= form_for @wish, url: {action: 'comfirmation'} do |f| %>
+
+      <%= f.text_field :title, placeholder:"title" %>
+      <br>
+      <%= f.text_field :description, placeholder:"description" %>
+      <br>
+      <%= f.text_field :object, placeholder:"person name" %>
+      <br>
+      <p>deadline</p>
+      <%= f.date_select :deadline, :use_month_numbers => true %>
+      <br>
+
+      <%= f.file_field :image %>
+      <br>
+
+      <%= f.submit "Confirmation" %>
+  <% end %>
