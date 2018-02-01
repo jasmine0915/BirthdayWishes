@@ -15,3 +15,27 @@
  */
 
  @import 'semantic-ui';
+
+.main{
+  width: 100%;
+  text-align: center;
+}
+
+.main_image{
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+}
+.message{
+  display: inline-block;
+  width: 500px;
+  padding: 20px;
+}
+.img_people{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+.img_people:hover{
+  opacity: 0.5;
+}
