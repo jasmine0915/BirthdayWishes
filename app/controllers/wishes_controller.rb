@@ -7,7 +7,7 @@ class WishesController < ApplicationController
 	def create
 		wish = Wish.new(wish_params)
 		if wish.save?
-			render :action => "confirmation"
+			redirect_to comfirmation_wishes_path
 		else
 			render :action => "new"
 		end
