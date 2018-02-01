@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wish_id: 1
+  name: MyString
+  body: MyString
+  icon: MyText
+
+two:
+  wish_id: 1
+  name: MyString
+  body: MyString
+  icon: MyText
