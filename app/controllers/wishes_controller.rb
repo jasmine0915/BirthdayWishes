@@ -8,7 +8,7 @@ class WishesController < ApplicationController
 		wish = Wish.new(wish_params)
 		if wish.save
 			redirect_to :action => "complete", id: wish.id
-		else 
+		else
 			render :action => "new"
 		end
 	end
