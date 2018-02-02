@@ -17,3 +17,12 @@
 // Loads all Semantic javascripts
 //= require semantic-ui
 //= require_tree .
+
+$(function(){
+	$("#test").click(function(){
+		$(".test").modal('show');
+	});
+	$(".test").modal({
+		closable: true
+	});
+});
