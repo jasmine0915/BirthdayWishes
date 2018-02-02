@@ -1,30 +1,36 @@
-<h1>confirming form</h1>
-<%= form_for @wish, url: {action: 'new'}, method: :get do |f| %>
+<div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+      <div class="textcontainer">
+        <h1>confirming form</h1>
+        <%= form_for @wish, url: {action: 'new'}, method: :get do |f| %>
 
-    <%= @wish.description %>
-    <%= f.hidden_field :description %>
-    <%= @wish.object %>
-    <%= f.hidden_field :object %>
-    <%= @wish.deadline %>
-    <%= f.hidden_field :deadline %>
-    <%= @wish.title %>
-    <%= f.hidden_field :title %>
-    <%= image_tag @wish.image.to_s %>
-    <%= f.hidden_field :image %>
+        <p>description:<%= @wish.description %></p>
+        <%= f.hidden_field :description %>
+        <p>object:<%= @wish.object %></p>
+        <%= f.hidden_field :object %>
+        <p>deadline:<%= @wish.deadline %></p>
+        <%= f.hidden_field :deadline %>
+        <p>title:<%= @wish.title %></p>
+        <%= f.hidden_field :title %>
+        <%= image_tag @wish.image.to_s, style: "width:300px; height:300px;" %>
+        <%= f.hidden_field :image %>
+        <br>
+        <%= f.submit 'back', :class => "ui fluid large yellow submit button", style: "display:inline-block; margin:20px; width:200px;" %>
 
-    <%= f.submit 'back' %>
-    
-<% end %>
+        <% end %>
 
-<%= form_for @wish, url: {action: 'create'} do |f| %>
+        <%= form_for @wish, url: {action: 'create'} do |f| %>
 
-    <%= f.hidden_field :description %>
-    <%= f.hidden_field :object %>
-    <%= f.hidden_field :deadline %>
-    <%= f.hidden_field :title %>
-    <%= f.hidden_field :image %>
+        <%= f.hidden_field :description %>
+        <%= f.hidden_field :object %>
+        <%= f.hidden_field :deadline %>
+        <%= f.hidden_field :title %>
+        <%= f.hidden_field :image %>
 
-    <%= f.submit 'enter' %>
-<% end %>
-
-
+        <%= f.submit 'enter', :class => "ui fluid large yellow submit button", style: "display:inline-block; margin:20px; width:200px;"  %>
+        <% end %>
+        </div>
+    </div>
+    <div class="four wide column"></div>
+</div>
