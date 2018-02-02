@@ -8,4 +8,8 @@
 <%= qrcode_tag wish_url(@wish.id), module_size: 5 %>
 <br>
 <%= link_to wish_url(@wish.id), wish_url(@wish.id) %>
+<p style='margin-top: 20px;'>
+  <a href="#" onclick="window.print(); return false;">このページを印刷</a>
+</p>
+
 
