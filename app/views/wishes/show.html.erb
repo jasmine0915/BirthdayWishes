@@ -5,7 +5,6 @@
         <div class="textcontainer">
             <h1 class="main-title center aligned"><%= @wish.title %></h1>
         </div>
-
         <div class="center aligned">
             <%= image_tag @wish.image.to_s, class: 'main_image'%>
         </div>
@@ -26,7 +25,7 @@
                         Message
                     </div>
                     <div class="image content">
-                        <%= image_tag message.icon.to_s, class: 'image_people'%>
+                        <%= image_tag message.icon.to_s, class: 'image_people', size: "360x240" %>
                         <div class="description" style="padding-left:30px;">
                             <div class="ui header"><%= @wish.object %>さん、お誕生日おめでとう！</div>
                             <p><%= message.body %></p>
