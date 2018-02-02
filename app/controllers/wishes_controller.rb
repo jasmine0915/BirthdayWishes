@@ -6,10 +6,10 @@ class WishesController < ApplicationController
 
 	def create
 		wish = Wish.new(wish_params)
-		if params[:back]
-			render :new
-		else wish.save
-			redirect_to wish, notice: 'Task was successfully created.'
+		if wish.save
+			redirect_to :action => "complete", id: wish.id
+		else 
+			render :action => "new"
 		end
 	end
 
@@ -23,7 +23,7 @@ class WishesController < ApplicationController
 	end
 
 	def show
-		@wish = Wish.where(wish_params)
+		@wish = Wish.find(params[:id])
 		@messages = @wish.messages
 	end
 

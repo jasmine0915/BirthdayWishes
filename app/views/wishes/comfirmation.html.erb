@@ -1,7 +1,7 @@
 <h1>confirming form</h1>
-<%= form_for @wish do |f| %>
+<%= form_for @wish, url: {action: 'new'}, method: :get do |f| %>
 
-    description: <%= @wish.description %>
+    <%= @wish.description %>
     <%= f.hidden_field :description %>
     <%= @wish.object %>
     <%= f.hidden_field :object %>
@@ -12,6 +12,19 @@
     <%= image_tag @wish.image.to_s %>
     <%= f.hidden_field :image %>
 
-    <%= f.submit 'back', name: 'back' %>
+    <%= f.submit 'back' %>
+    
+<% end %>
+
+<%= form_for @wish, url: {action: 'create'} do |f| %>
+
+    <%= f.hidden_field :description %>
+    <%= f.hidden_field :object %>
+    <%= f.hidden_field :deadline %>
+    <%= f.hidden_field :title %>
+    <%= f.hidden_field :image %>
+
     <%= f.submit 'enter' %>
 <% end %>
+
+
