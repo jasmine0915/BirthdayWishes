@@ -1,7 +1,11 @@
 <h1>complete(仮)</h1>
 
 <h2>Thank you</h2>
+<p>このリンクをシェアしてみんなにメッセージを残してもらおう</p>
 <%= link_to new_wish_message_url(@wish.id), new_wish_message_url(@wish.id) %>
+<br>
+<p style='margin-top: 20px'>このQRコードをお祝いしたい人に送ってあげよう</p>
+<%= qrcode_tag wish_url(@wish.id), module_size: 5 %>
 <br>
 <%= link_to wish_url(@wish.id), wish_url(@wish.id) %>
 
