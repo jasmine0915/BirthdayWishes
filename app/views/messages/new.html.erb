@@ -1,13 +1,14 @@
-<div class="main">
-  <div class="textcontainer">
-    <h1 class="main-title center aligned">Message</h1>
-  </div>
-  <p class="message"><%= @wish.description %></p>
-  <p class="message"><%= @wish.deadline %>　までにメッセージを送ろう！</p>
-</div>
 <div class="ui grid">
   <div class="four wide column"></div>
   <div class="eight wide column">
+  <div class="main">
+    <div class="textcontainer">
+      <h1 class="main-title center aligned">Message</h1>
+    </div>
+    <p class="desc"><%= @wish.description %></p>
+    <p class="deadline"><%= @wish.deadline %></P>
+    <p>までにメッセージを送ろう！</p>
+    </div>
     <%= form_for @messages, url: wish_messages_path(@wish.id), html: {class: "ui large form"} do |f| %>
       <div class="ui stacked segment">
         <div class="field">
@@ -28,7 +29,7 @@
           </label>
           <%= f.file_field :icon, style: "display:none", :id => "file" %>
         </div>
-        <%= f.submit "投稿する", :class => "ui fluid large teal submit button" %>
+        <%= f.submit "投稿する", :id => "submit", :class => "ui fluid large yellow submit button" %>
       </div>  
     <% end %>
   </div>
