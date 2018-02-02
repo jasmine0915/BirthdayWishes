@@ -15,11 +15,11 @@
 
     </div>
     <div class="ui five column center aligned grid">
-        <% @messages.each do |message| %>
+        <% @messages.each_with_index do |message, i| %>
             <div class="column">
-                <%= image_tag message.icon.to_s, class: 'img_people ui', id: 'test'%>
+                <%= image_tag message.icon.to_s, class: 'img_people ui test', id: "test#{i}" %>
 
-                <div class="ui modal test">
+                <div class="ui modal" id="<%= i %>" >
                     <i class="close icon"></i>
                     <div class="header">
                         Message
