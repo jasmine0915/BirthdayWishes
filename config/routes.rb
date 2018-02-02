@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       post 'comfirmation'
       get 'complete'
+      get 'print'
     end
     resources :messages, only: [:new, :create] do
       collection do
