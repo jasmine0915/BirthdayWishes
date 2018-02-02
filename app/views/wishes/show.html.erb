@@ -3,11 +3,11 @@
     <div class="main">
 
         <div class="textcontainer">
-            <h1 class="main-title center aligned">Happy Birthday</h1>
+            <h1 class="main-title center aligned"><%= @wish.title %></h1>
         </div>
 
         <div class="center aligned">
-            <%= image_tag 'waseda.jpg', class: 'main_image'%>
+            <%= image_tag @wish.image.to_s, class: 'main_image'%>
         </div>
         <p class="message">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -16,57 +16,33 @@
 
     </div>
     <div class="ui five column center aligned grid">
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people ui', id: 'test'%>
+        <% @messages.each do |message| %>
+            <div class="column">
+                <%= image_tag message.icon.to_s, class: 'img_people ui', id: 'test'%>
 
-            <div class="ui modal test">
-                <i class="close icon"></i>
-                <div class="header">
-                    Message
-                </div>
-                <div class="image content">
-                    <%= image_tag 'onose.png', class: 'image_people'%>
-                    <div class="description" style="padding-left:30px;">
-                        <div class="ui header">お誕生日おめでとう！</div>
-                        <p>いつもありがとう。誕生日おめでとう！</p>
+                <div class="ui modal test">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Message
+                    </div>
+                    <div class="image content">
+                        <%= image_tag message.icon.to_s, class: 'image_people'%>
+                        <div class="description" style="padding-left:30px;">
+                            <div class="ui header"><%= @wish.object %>さん、お誕生日おめでとう！</div>
+                            <p><%= message.body %></p>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui positive right labeled icon button">
+                            Close
+                            <i class="checkmark icon"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="actions">
-                    <div class="ui positive right labeled icon button">
-                        Close
-                        <i class="checkmark icon"></i>
-                    </div>
-                </div>
+
             </div>
 
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
-        <div class="column">
-            <%= image_tag 'waseda.jpg', class: 'img_people'%>
-        </div>
+        <% end %>
 
     </div>
 </div>
