@@ -47,6 +47,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+.main-content {
+  padding-top: 70px;
+}
 body {
 	line-height: 1;
   color:rgb(120, 120, 120);
@@ -81,8 +84,8 @@ h2{
 
 // top index
 .main-image{
-  padding-top: 70px !important;
-  height: 600px;
+  
+  height: 530px;
   background-image: url('jeremy-cai-66284.jpg');
   background-size: cover;
   background-position: center;

@@ -31,6 +31,10 @@ class WishesController < ApplicationController
 		@messages = @wish.messages
 	end
 
+	def print
+		@wish = Wish.find(params[:id])
+	end
+
 	private
 	def wish_params
 		params.require(:wish).permit(:description, :object, :deadline, :title, :image)

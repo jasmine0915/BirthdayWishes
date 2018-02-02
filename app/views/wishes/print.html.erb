@@ -1,0 +1,15 @@
+<h1>
+  <%= @wish.object %>さん宛てにメッセージがあります。
+</h1>
+<p style="padding-top: 20px; padding-bottom: 20px;">
+  下のQRコードを読み取って見てください。
+</p>
+<p>
+  <%= qrcode_tag wish_url(@wish.id), module_size: 5 %>
+</p>
+
+<p style='margin-top: 20px;'>
+  <a href="#" onclick="window.print(); return false;">このページを印刷</a>
+</p>
+
+
