@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// new
 .desc {
   font-size: 1.8rem;
   margin-bottom: 25px;
@@ -18,4 +19,12 @@
 
 #preview img{
   max-width: 100%;  
+}
+
+// thankyou
+
+label {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255,193,7,1);
 }

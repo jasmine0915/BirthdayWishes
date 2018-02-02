@@ -14,22 +14,22 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <%= f.text_field :name,:placeholder => "Enter your name." %>
+            <%= f.text_field :name,:placeholder => "お名前を入力してください。" %>
           </div>
         </div>
         <div class="field">
-          <%= f.text_area :body, :rows => "3", :placeholder => "Enter your message." %>
+          <%= f.text_area :body, :rows => "3", :placeholder => "メッセージを入力してください。" %>
         </div>
         <div id="preview">
         </div>
         <div class="field center aligned">
           <label for="file" class="ui icon button">
             <i class="image icon"></i>
-            Image Upload
+            アイコン画像を設定する
           </label>
           <%= f.file_field :icon, style: "display:none", :id => "file" %>
         </div>
-        <%= f.submit "投稿する", :id => "submit", :class => "ui fluid large yellow submit button" %>
+        <%= f.submit "メッセージを送る", :id => "submit", :class => "ui fluid large yellow submit button" %>
       </div>  
     <% end %>
   </div>
