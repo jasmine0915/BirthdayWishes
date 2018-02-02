@@ -20,11 +20,32 @@
 
 // modal
 $(function(){
-	$("#test").click(function(){
-		$(".test").modal('show');
+	$("#test0").click(function(){
+        $("#0").modal('show');
 	});
-	$(".test").modal({
-		closable: true
+    $("#test1").click(function(){
+        $("#1").modal('show');
+	});
+    $("#test2").click(function(){
+        $("#2").modal('show');
+	});
+    $("#test3").click(function(){
+        $("#3").modal('show');
+	});
+    $("#test4").click(function(){
+        $("#4").modal('show');
+	});
+    $("#test5").click(function(){
+        $("#5").modal('show');
+	});
+    $("#test6").click(function(){
+        $("#6").modal('show');
+	});
+    $("#test7").click(function(){
+        $("#7").modal('show');
+	});
+    $("#test8").click(function(){
+        $("#8").modal('show');
 	});
 });
  // confetti
