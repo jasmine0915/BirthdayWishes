@@ -1,12 +1,37 @@
-<h1>Messages#new</h1>
-<%= @wish.description %>
-<%= @wish.deadline %>
-<%= form_for @messages, url: wish_messages_path(@wish.id) do |f| %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.text_area :body %>
-  <br>
-  <%= f.file_field :icon %>
-  <br>
-  <%= f.submit "投稿する" %>
-<% end %>
+<div class="ui grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+  <div class="main">
+    <div class="textcontainer">
+      <h1 class="main-title center aligned">Message</h1>
+    </div>
+    <p class="desc"><%= @wish.description %></p>
+    <p class="deadline"><%= @wish.deadline %></P>
+    <p>までにメッセージを送ろう！</p>
+    </div>
+    <%= form_for @messages, url: wish_messages_path(@wish.id), html: {class: "ui large form"} do |f| %>
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <%= f.text_field :name,:placeholder => "Enter your name." %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.text_area :body, :rows => "3", :placeholder => "Enter your message." %>
+        </div>
+        <div id="preview">
+        </div>
+        <div class="field center aligned">
+          <label for="file" class="ui icon button">
+            <i class="image icon"></i>
+            Image Upload
+          </label>
+          <%= f.file_field :icon, style: "display:none", :id => "file" %>
+        </div>
+        <%= f.submit "投稿する", :id => "submit", :class => "ui fluid large yellow submit button" %>
+      </div>  
+    <% end %>
+  </div>
+  <div class="four wide column"></div>
+</div>
