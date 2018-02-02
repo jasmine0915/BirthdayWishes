@@ -1,5 +1,11 @@
-<h1>Messages#thankyou</h1>
-<p>thank you!</p>
-<%= @message.name %>
-<%= @message.body %>
-<%= image_tag @message.icon.to_s %>
+<div class="main centered">
+  <div class="textcontainer">
+    <h1 class="main-title center aligned">thank you!</h1>
+    <label for="name">お名前</label>
+    <p><%= @message.name %></p>
+    <label for="message">メッセージ</label>
+    <p><%= @message.body %></p>
+    <label for="message">アイコン</label>
+    <p><%= image_tag @message.icon.to_s %></p>
+  </div>
+</div>
