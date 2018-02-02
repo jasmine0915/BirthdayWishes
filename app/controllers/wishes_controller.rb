@@ -23,7 +23,11 @@ class WishesController < ApplicationController
 	end
 
 	def show
-		@wish = Wish.find(params[:id])
+		@wish = Wish.find_by(id: params[:id])
+		if @wish.nil?
+			redirect_to root_path
+			return
+		end
 		@messages = @wish.messages
 	end
 
