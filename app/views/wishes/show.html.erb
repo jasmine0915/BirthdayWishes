@@ -6,7 +6,8 @@
             <h1 class="main-title center aligned"><%= @wish.title %></h1>
         </div>
         <div class="center aligned">
-            <%= image_tag @wish.image.to_s, class: 'main_image'%>
+            <%= image_tag ("sweet-lily-pigtails-001.jpg"), class: 'main_image'%>
+            <image_tag >
         </div>
         <p class="message">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -16,30 +17,30 @@
     </div>
     <div class="ui five column center aligned grid">
         <% @messages.each_with_index do |message, i| %>
-            <div class="column">
-                <%= image_tag message.icon.to_s, class: 'img_people ui test', id: "test#{i}" %>
+        <div class="column">
+            <%= image_tag message.icon.to_s, class: 'img_people ui test', id: "test#{i}" %>
 
-                <div class="ui modal" id="<%= i %>" >
-                    <i class="close icon"></i>
-                    <div class="header">
-                        Message
-                    </div>
-                    <div class="image content">
-                        <%= image_tag message.icon.to_s, class: 'image_people', size: "360x240" %>
-                        <div class="description" style="padding-left:30px;">
-                            <div class="ui header"><%= @wish.object %>さん、お誕生日おめでとう！</div>
-                            <p><%= message.body %></p>
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <div class="ui positive right labeled icon button">
-                            Close
-                            <i class="checkmark icon"></i>
-                        </div>
+            <div class="ui modal" id="<%= i %>" >
+                <i class="close icon"></i>
+                <div class="header">
+                    <%= message.name %>
+                </div>
+                <div class="image content">
+                    <%= image_tag message.icon.to_s, class: 'image_people', size: "360x240" %>
+                    <div class="description" style="padding-left:30px;">
+                        <div class="ui header"><%= @wish.object %>さん、お誕生日おめでとう！</div>
+                        <p><%= message.body %></p>
                     </div>
                 </div>
-
+                <div class="actions">
+                    <div class="ui positive right labeled icon button">
+                        Close
+                        <i class="checkmark icon"></i>
+                    </div>
+                </div>
             </div>
+
+        </div>
 
         <% end %>
 
