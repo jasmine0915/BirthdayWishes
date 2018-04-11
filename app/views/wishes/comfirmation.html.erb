@@ -7,7 +7,7 @@
 
         <p>description:<%= @wish.description %></p>
         <%= f.hidden_field :description %>
-        <p>object:<%= @wish.object %></p>
+        <p>object:<%=hbr @wish.object %></p>
         <%= f.hidden_field :object %>
         <p>deadline:<%= @wish.deadline %></p>
         <%= f.hidden_field :deadline %>

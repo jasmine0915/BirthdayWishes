@@ -3,13 +3,13 @@
 </div>
 
 
-<%= form_for @wish, url: {action: 'comfirmation'}, html: {class: "ui large form"} do |f| %>
+<%= form_for @wish, url: {action: 'comfirmation'}, html: {class: "ui large form"}, method: :get do |f| %>
 <div class="ui stacked segment centerform">
   <div class="field">
       <%= f.text_field :title, placeholder:"title" %>
   </div>
   <div class="field">
-      <%= f.text_field :description, placeholder:"description" %>
+      <%= f.text_area :description, placeholder:"description" %>
     </div>
     <div class="field">
       <%= f.text_field :object, placeholder:"person name" %>

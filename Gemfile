@@ -56,3 +56,20 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem "pg", group: :production
+
+
+
+
+
+gem 'pry-rails'
+# デバッグ用(当たりついてる時)
+gem 'hirb'
+# rails cが見やすくなります
+gem 'better_errors'
+# エラー画面でデバッグ(フロント見たい〜〜)
+gem 'binding_of_caller'
+# エラー画面見やすく
+gem 'annotate'
+# モデルの上にカラム表示
+gem 'colorize_unpermitted_parameters'
+# ターミナルで許可されてないパラムスを色変えて表示
