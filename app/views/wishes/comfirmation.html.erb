@@ -20,7 +20,7 @@
 
         <% end %>
 
-        <%= form_for @wish, url: {action: 'create'} do |f| %>
+        <%= form_for @wish, url: {action: 'create'}, method: :post do |f| %>
 
         <%= f.hidden_field :description %>
         <%= f.hidden_field :object %>

@@ -3,7 +3,7 @@
 </div>
 
 
-<%= form_for @wish, url: {action: 'comfirmation'}, html: {class: "ui large form"}, method: :get do |f| %>
+<%= form_for @wish, url: {action: 'comfirmation'}, html: {class: "ui large form"} do |f| %>
 <div class="ui stacked segment centerform">
   <div class="field">
       <%= f.text_field :title, placeholder:"title" %>
