@@ -1,31 +1,36 @@
-<div class="form-title">
-<h1>Form</h1>
-</div>
 
+<%= render 'layouts/header' %>
+<div class="main-content">
 
-<%= form_for @wish, url: {action: 'comfirmation'}, html: {class: "ui large form"} do |f| %>
-<div class="ui stacked segment centerform">
-  <div class="field">
-      <%= f.text_field :title, placeholder:"title" %>
+  <div class="form-title">
+    <h1>Form</h1>
   </div>
-  <div class="field">
-      <%= f.text_field :description, placeholder:"description" %>
+
+
+  <%= form_for @wish, url: {action: 'comfirmation'}, html: {class: "ui large form"} do |f| %>
+  <div class="ui stacked segment centerform">
+    <div class="field">
+      <%= f.text_field :title, placeholder:"title" %>
+    </div>
+    <div class="field">
+      <%= f.text_area :description, placeholder:"description" %>
     </div>
     <div class="field">
       <%= f.text_field :object, placeholder:"person name" %>
     </div>
-      <p>deadline</p>
-      <%= f.date_field :deadline%>
+    <p>deadline</p>
+    <%= f.date_field :deadline %>
 
 
-      <div class="field center aligned">
-          <label for="file" class="ui icon button">
-              <i class="image icon"></i>
-              アイコン画像を設定する
-          </label>
-          <%= f.file_field :image, style: "display:none", :id => "file" %>
-      </div>
-
-      <%= f.submit "Confirmation", :class => "ui fluid large yellow submit button" %>
+    <div class="field center aligned">
+      <label for="file" class="ui icon button">
+        <i class="image icon"></i>
+        アイコン画像を設定する
+      </label>
+      <%= f.file_field :image, style: "display:none", :id => "file" %>
     </div>
+
+    <%= f.submit "Confirmation", :class => "ui fluid large yellow submit button" %>
+  </div>
   <% end %>
+</div>

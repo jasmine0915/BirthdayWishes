@@ -1,21 +1,25 @@
 class WishesController < ApplicationController
 
+	@@image = []
 	def new
 		@wish = Wish.new
 	end
 
+	def comfirmation
+		@wish = Wish.new(wish_params)
+		# binding.pry
+		@@image = wish_params[:image]
+	end
+
 	def create
-		wish = Wish.new(wish_params)
-		if wish.save
-			redirect_to :action => "complete", id: wish.id
+		@wish = Wish.new(wish_params)
+		@wish.image = @@image
+		if @wish.save
+			redirect_to :action => "complete", id: @wish.id
+			@@image = []
 		else
 			render :action => "new"
 		end
-	end
-
-
-	def comfirmation
-		@wish = Wish.new(wish_params)
 	end
 
 	def complete

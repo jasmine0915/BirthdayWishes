@@ -1,17 +1,31 @@
+<%= render 'layouts/header' %>
+<div class="main-content">
 <div class="thankyou-main">
-    <div class="textcontainer">
-        <h1>Thank you!</h1>
-        <div class="text-box">
-        <p>このリンクをシェアしてみんなにメッセージを残してもらおう</p>
-        <%= link_to new_wish_message_url(@wish.id), new_wish_message_url(@wish.id) %>
+  <div class="textcontainer">
+    <h1>Thank you!</h1>
+    <div class="text-box">
+      <p>このリンクをシェアしてみんなにメッセージを残してもらおう</p>
+      <%= link_to new_wish_message_url(@wish.id), new_wish_message_url(@wish.id) %>
+      <br>
+      <p style='margin-top: 20px'>QRコードかURLを<%= @wish.object %>さんに送ってあげよう</p>
+      <%= qrcode_tag wish_url(@wish.id), module_size: 5 %>
+      <br>
+      <br>
+        <div class="ui form">
+          <textarea id="fe_text" class="inline field" name="" rows="1" cols="10" >
+            <%= wish_url(@wish.id) %>
+          </textarea>
+        </div>
+        <button class="ui teal button my_clip_button", data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button'><i class=" fas fa-clipboard"></i></button>
+
+
+      <p style='margin-top: 20px;'>
+        <a href="#" onclick="window.print(); return false;">このページを印刷</a>
         <br>
-        <p style='margin-top: 20px'>このQRコードをお祝いしたい人に送ってあげよう</p>
-        <%= qrcode_tag wish_url(@wish.id), module_size: 5 %>
-        <br>
-        <%= link_to wish_url(@wish.id), wish_url(@wish.id) %>
-        <p style='margin-top: 20px;'>
-            <a href="#" onclick="window.print(); return false;">このページを印刷</a>
-        </p>
-      </div>
+        <%= link_to "完成ページを確認してみよう", wish_url(@wish.id), id: "fe_text", rows: "7", cols: "100" %>
+
+      </p>
     </div>
+  </div>
+</div>
 </div>

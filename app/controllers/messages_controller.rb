@@ -6,8 +6,10 @@ class MessagesController < ApplicationController
 
   def create
     wish = Wish.find(params[:wish_id])
+    
     @message = wish.messages.build(message_params)
     if @message.save
+     
       redirect_to :action => "thankyou", id: @message.id
     else
       render :action => "new"

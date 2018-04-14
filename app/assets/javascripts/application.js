@@ -13,15 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
-//= require turbolinks
+//= require zeroclipboard
 // Loads all Semantic javascripts
 //= require semantic-ui
 //= require_tree .
 
+
+
+// clipboard
+$(document).ready(function() {
+  var clip = new ZeroClipboard($("#d_clip_button"))
+});
+
+
 // modal
 $(function(){
 	$(".test").click(function(){
-        $(this).next().modal('show');
+
+    $(this).next().modal('show');
+
 	});
 });
  // confetti
