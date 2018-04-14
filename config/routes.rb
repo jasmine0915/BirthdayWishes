@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :wishes, only: [:new, :create, :show] do
     collection do
-      get 'comfirmation'
+      post 'comfirmation'
       get 'complete'
       get 'print'
     end

@@ -6,7 +6,7 @@
             <h1 class="main-title center aligned"><%= @wish.title %></h1>
         </div>
         <div class="center aligned">
-            <%= image_tag ("sweet-lily-pigtails-001.jpg"), class: 'main_image'%>
+            <%= image_tag @wish.image.to_s, class: 'main_image'%>
             <image_tag >
         </div>
         <p class="message">
@@ -18,7 +18,7 @@
     <div class="ui five column center aligned grid">
         <% @messages.each_with_index do |message, i| %>
         <div class="column">
-            <%= image_tag message.icon.to_s, class: 'img_people ui test', id: "test#{i}" %>
+            <%= image_tag message.icon.to_s, class: 'img_people ui test' %>
 
             <div class="ui modal" id="<%= i %>" >
                 <i class="close icon"></i>

@@ -13,38 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
+//= require zeroclipboard
 // Loads all Semantic javascripts
 //= require semantic-ui
 //= require_tree .
 
+
+
+// clipboard
+$(document).ready(function() {
+  var clip = new ZeroClipboard($("#d_clip_button"))
+});
+
+
 // modal
 $(function(){
-	$("#test0").click(function(){
-        $("#0").modal('show');
-	});
-    $("#test1").click(function(){
-        $("#1").modal('show');
-	});
-    $("#test2").click(function(){
-        $("#2").modal('show');
-	});
-    $("#test3").click(function(){
-        $("#3").modal('show');
-	});
-    $("#test4").click(function(){
-        $("#4").modal('show');
-	});
-    $("#test5").click(function(){
-        $("#5").modal('show');
-	});
-    $("#test6").click(function(){
-        $("#6").modal('show');
-	});
-    $("#test7").click(function(){
-        $("#7").modal('show');
-	});
-    $("#test8").click(function(){
-        $("#8").modal('show');
+	$(".test").click(function(){
+    $(this).next().modal('show');
 	});
 });
  // confetti
