@@ -29,7 +29,9 @@ $(document).ready(function() {
 // modal
 $(function(){
 	$(".test").click(function(){
+
     $(this).next().modal('show');
+
 	});
 });
  // confetti
